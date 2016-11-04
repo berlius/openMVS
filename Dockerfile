@@ -29,7 +29,6 @@ RUN apt-get update && apt-get install -y \
 RUN hg clone https://bitbucket.org/eigen/eigen#3.2
 RUN mkdir eigen_build && cd eigen_build
 RUN cmake . ../eigen
-RUN make 
 RUN make install
 RUN cd ..
 
