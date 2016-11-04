@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
 RUN hg clone https://bitbucket.org/eigen/eigen#3.2
 RUN mkdir eigen_build && cd eigen_build
 RUN cmake . ../eigen
-RUN make -j$(nproc)  && make install && cd ..
+RUN make && make install && cd ..
 
 
 # Ceres
@@ -37,7 +37,7 @@ RUN make -j$(nproc)  && make install && cd ..
 RUN git clone https://ceres-solver.googlesource.com/ceres-solver ceres-solver
 RUN mkdir ceres_Build && cd ceres_Build
 RUN cmake . ../ceres-solver/ -DMINIGLOG=ON -DBUILD_TESTING=OFF -DBUILD_EXAMPLES=OFF
-RUN make -j$(nbproc) && make install && cd ..
+RUN make && make install && cd ..
 
 
 # VCGLib 
@@ -50,7 +50,7 @@ git clone https://github.com/cdcseacave/VCG.git vcglib
 RUN git clone https://github.com/cdcseacave/openMVS.git openMVS
 RUN mkdir openMVS_Build && cd openMVS_Build 
 RUN cmake . ../openMVS -DCMAKE_BUILD_TYPE=RELEASE -DVCG_DIR="../vcglib" 
-RUN make -j$(nproc)  && make install
+RUN make && make install
 
 WORKDIR "/root"
 CMD ["/bin/bash"]
