@@ -44,11 +44,6 @@ RUN cd /opt && \
 
 ADD . /opt/openMVS
 
-# Patch VCG
-RUN cp /opt/openMVS/build/clean.patch /opt/vcglib/vcg/complex/algorithms && \
-  cd /opt/vcglib/vcg/complex/algorithms && \
-  patch < clean.patch
-
 #OpenMVS build
 RUN ln -s /usr/lib/x86_64-linux-gnu/libGLU.so.1.3.1 /usr/lib/x86_64-linux-gnu/libGLU.so && \ 
   ln -s /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1  /usr/lib/x86_64-linux-gnu/libGL.so && \ 
@@ -57,3 +52,6 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libGLU.so.1.3.1 /usr/lib/x86_64-linux-gnu/li
   cmake . ../openMVS -DCMAKE_BUILD_TYPE=RELEASE -DVCG_DIR="/opt/vcglib" -DCERES_DIR="/usr/local/share/Ceres" -DOpenCV_CAN_BREAK_BINARY_COMPATIBILITY=OFF -DOpenMVG_DIR:STRING="/opt/openMVG_install/share/openMVG/cmake/" && \
   make && \
   cp ./bin/* /usr/bin
+  
+WORKDIR "/root"
+CMD ["/bin/bash"]
