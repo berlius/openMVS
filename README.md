@@ -11,4 +11,3 @@ Dockerfile for openMVS https://github.com/cdcseacave/openMVS
 - **mesh refinement** for recovering all fine details
 - **mesh texturing** for computing a sharp and accurate texture to color the mesh
 
-See the complete [documentation](https://github.com/cdcseacave/openMVS/wiki) on wiki.
