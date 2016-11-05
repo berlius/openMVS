@@ -43,7 +43,7 @@ RUN make && make install && cd .. && cd ..
 
 # VCGLib 
 
-git clone https://github.com/cdcseacave/VCG.git /root/vcglib
+RUN git clone https://github.com/cdcseacave/VCG.git /root/vcglib
 
 
 # OpenMVS 
