@@ -1,6 +1,6 @@
 # OpenMVS: open Multi-View Stereo reconstruction library
 
-you can pull [the container from](https://hub.docker.com/r/berlius/openmvs/) :
+you can pull [the container](https://hub.docker.com/r/berlius/openmvs/) :
 
 ```
 docker pull berlius/openmvs
