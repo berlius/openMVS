@@ -1,6 +1,10 @@
 # OpenMVS: open Multi-View Stereo reconstruction library
 
-Dockerfile for openMVS https://github.com/cdcseacave/openMVS
+you can pull [the container from](https://hub.docker.com/r/berlius/openmvs/) :
+
+```
+docker pull berlius/openmvs
+```
 
 ## Introduction
 
