@@ -54,6 +54,7 @@ RUN mkdir openMVS_Build && cd openMVS_Build
 RUN cmake . /root/openMVS/openMVS -DCMAKE_BUILD_TYPE=RELEASE -DVCG_DIR="/root/vcglib" 
 RUN make && make install
 
+ENV PATH=/usr/local/bin/OpenMVS:$PATH
 
 WORKDIR "/root"
 CMD ["/bin/bash"]
